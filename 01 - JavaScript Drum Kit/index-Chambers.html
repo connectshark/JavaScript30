@@ -78,9 +78,12 @@
 
     key.classList.add('playing')
   }
+
+
   document.querySelectorAll('.key').forEach(key => {
     key.addEventListener('transitionend', removeClass)
   })
+
   window.addEventListener('keydown' ,playHandler)
 </script>
 
