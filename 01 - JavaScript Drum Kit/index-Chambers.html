@@ -71,7 +71,6 @@
     const key = document.querySelector(`div[data-key="${e.keyCode}"]`)
     // 按鍵未對應聲音則不執行
     if (!audio) return
-
     //聲音播放
     audio.currentTime = 0
     audio.play()

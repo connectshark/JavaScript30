@@ -6,9 +6,9 @@
 
 ## 成果
 
-各單元學習心得會放在[blog](https://connectshark.github.io/)上
+各單元學習心得會放在[blog](https://connectshark.github.io/collection/Javascript30.html)上
 
 
 | 單元 | 學習筆記 | 展示網址 |
 | -------- | -------- | -------- |
-| 01 - JavaScript Drum Kit | 筆記 | [01 - JavaScript Drum Kit](https://connectshark.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index-Chambers.html) |
+| 01 - JavaScript Drum Kit | [筆記](https://connectshark.github.io/collection/Javascript30/DrumKit.html) | [01 - JavaScript Drum Kit](https://connectshark.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index-Chambers.html) |
