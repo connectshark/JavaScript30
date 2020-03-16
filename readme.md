@@ -12,3 +12,4 @@
 | 單元 | 學習筆記 | 展示網址 |
 | -------- | -------- | -------- |
 | 01 - JavaScript Drum Kit | [筆記](https://connectshark.github.io/collection/Javascript30/DrumKit.html) | [01 - JavaScript Drum Kit](https://connectshark.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index-Chambers.html) |
+|02 - JS and CSS Clock|[筆記](https://connectshark.github.io/collection/Javascript30/JsClock.html)|[02 - JS and CSS Clock](https://connectshark.github.io/JavaScript30/02%20-%20JS%20and%20CSS%20Clock/index-Chambers.html)|
