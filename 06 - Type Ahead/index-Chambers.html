@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+let cities = []
+fetch(endpoint)
+  .then(res => res.json())
+  .then(data => cities.push(...data))
+
+function matchWord(typeWord, city) {
+  let regWord = new RegExp(typeWord, 'gi')
+  return city.filter(item => item.city.match(regWord) || item.state.match(regWord))
+}
+
+
+function numberWithCommas(x) {
+  // return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return parseInt(x).toLocaleString()
+}
+
+
+function wordSearch() {
+  const result = matchWord(this.value, cities)
+  const regWord = new RegExp(this.value, 'gi')
+  const resultList = result.map(item => {
+  let cityWord = item.city.replace(regWord, `<span class="hl">${this.value}</span>`)
+  let stateWord = item.state.replace(regWord, `<span class="hl">${this.value}</span>`)
+  let populationWord = numberWithCommas(item.population)
+    return `<li>
+      <span class="name">${cityWord}, ${stateWord}</span>
+      <span class="population">${populationWord}</span>
+    </li>`
+  }).join(' ')
+  suggestion.innerHTML = resultList
+}
+const searchInput = document.querySelector('.search')
+const suggestion = document.querySelector('.suggestions')
+searchInput.addEventListener('change', wordSearch)
+searchInput.addEventListener('keyup', wordSearch)
+</script>
+</body>
+</html>
