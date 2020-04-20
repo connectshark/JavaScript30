@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+  <div class="bubble">泡泡</div>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('hello')
+
+    // Interpolated
+    console.log(`開檢查在要中斷的node上點右鍵 break on => attribute modifications`)
+
+
+    // Styled
+    console.log(`%c hello 這個字有顏色`, 'font-size: 50px;color: red')
+
+    // warning!
+    console.warn(`這是一段警告你的字`)
+
+
+    // Error :|
+    console.error(`這是一段錯誤的字`)
+    // Info
+    console.info('Crocodiles eat 3-4 people per year');
+    // Testing
+    console.assert(1 >= 2, `正確的應該是1 <= 2`)
+    // clearing
+    console.log(`%c console.clear() 可以把log資料清除`, 'font-size: 26px')
+    // Viewing DOM Elements
+    const bubble = document.querySelector('.bubble')
+    console.dir(bubble)
+    // Grouping together
+    for (let i = 0; i < dogs.length; i++) {
+      const dog = dogs[i];
+      console.group(`${dog.name}`)
+      console.log(`狗的名字是: ${dog.name}`)
+      console.log(`狗的年齡是: ${dog.name}`)
+      console.groupEnd(`${dog.name}`)
+    }
+    // counting
+    console.count(`ken`)
+    console.count(`ken`)
+    console.count(`ken`)
+    console.count(`ken`)
+    console.count(`ken`)
+    console.count(`ken`)
+    console.count(`sandra`)
+    console.count(`sandra`)
+    console.count(`sandra`)
+    console.count(`sandra`)
+    console.count(`sandra`)
+    console.count(`sandra`)
+    console.count(`sandra`)
+    console.count(`sandra`)
+    // timing
+    console.time(`fetch會用多少時間`)
+    fetch('https://api.github.com/users/wesbos')
+      .then(res => res.json())
+      .then(data => {
+        console.timeEnd(`fetch會用多少時間`)
+      })
+  </script>
+</body>
+</html>
